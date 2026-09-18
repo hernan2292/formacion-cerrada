@@ -1,0 +1,28 @@
+# Ejemplo de configuracion de despliegue. Copiar a
+# /etc/formacion-cerrada/aeronave.yaml y ajustar por aeronave.
+#
+# Lo unico que cambia entre los cinco drones es `indice` e `identificador`.
+# Dos indices repetidos rompen la formacion EN SILENCIO: verificar los cinco.
+
+indice: 0
+total_nodos: 5
+identificador: "D-01"
+
+# observacion | asistido | autonomo
+# No cambiar sin completar la etapa 4 de validacion de MONTAJE.md.
+modo: observacion
+
+mavlink_dispositivo: /dev/serial0
+mavlink_baudios: 921600
+
+uwb_dispositivo: /dev/ttyUSB0
+uwb_baudios: 115200
+
+malla_grupo: "239.7.7.7"
+malla_puerto: 47700
+malla_interfaz: "0.0.0.0"
+clave_malla: /etc/formacion-cerrada/clave
+
+hercios: 10.0
+directorio_registro: /var/log/formacion-cerrada
+registrar_crudos: true

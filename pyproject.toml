@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "formacion-cerrada"
+version = "0.3.0"
+description = "Deteccion de falsificacion de senal satelital en enjambres de drones por validacion geometrica entre pares"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+dependencies = ["numpy>=1.24", "websockets>=12.0"]
+
+[project.optional-dependencies]
+aeronave = ["pymavlink>=2.4.41", "pyserial>=3.5", "PyYAML>=6.0"]
+desarrollo = ["pytest>=7.4"]
+
+[project.scripts]
+formacion-cerrada-banco = "formacion_cerrada.puente.servidor:main"
+
+[tool.setuptools.packages.find]
+include = ["formacion_cerrada*"]
+
+[tool.pytest.ini_options]
+testpaths = ["formacion_cerrada/pruebas"]

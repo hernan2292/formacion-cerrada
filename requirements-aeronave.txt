@@ -1,0 +1,12 @@
+# Dependencias ADICIONALES para correr sobre una aeronave.
+#
+# No hacen falta para el simulador ni para la demostracion. Se instalan solo en
+# la computadora companera del dron.
+-r requirements.txt
+
+# Enlace con la controladora de vuelo
+pymavlink>=2.4.41
+# Lectura de la radio de distancias por puerto serie
+pyserial>=3.5
+# Configuracion de despliegue
+PyYAML>=6.0
